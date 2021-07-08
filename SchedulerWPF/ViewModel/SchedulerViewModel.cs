@@ -1,4 +1,4 @@
-﻿using Syncfusion.UI.Xaml.Scheduler;
+using Syncfusion.UI.Xaml.Scheduler;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +11,9 @@ using System.Windows.Media;
 namespace SchedulerWPF
 {
     /// <summary>
-    /// Month cell customization View Model class.
+    ///  View Model class.
     /// </summary>
-    public class SchedulerViewModel : INotifyPropertyChanged
+    public class SchedulerViewModel
     {
         #region Constructor
 
@@ -30,27 +30,9 @@ namespace SchedulerWPF
         #region Public Properties
 
         /// <summary>
-        /// Property changed event handler.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// Gets or sets appointments
         /// </summary>
         public ScheduleAppointmentCollection Appointments { get; set; }
-
-        #endregion
-
-        #region Property Changed Event
-
-        /// <summary>
-        /// Invoke method when property changed
-        /// </summary>
-        /// <param name="propertyName">property name</param>
-        private void RaiseOnPropertyChanged(string propertyName)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         #endregion
 
@@ -91,7 +73,6 @@ namespace SchedulerWPF
             {
                 new SchedulerReminder { ReminderTimeInterval = new TimeSpan(0)},
             };
-
 
             this.Appointments.Add(newEvent);
             this.Appointments.Add(newEvent1);
